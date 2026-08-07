@@ -1,47 +1,91 @@
 const cursos = document.querySelectorAll(".curso");
 
 
-// Recuperar cursos guardados
-cursos.forEach((curso, index) => {
+function actualizarProgreso(){
 
-    let estado = localStorage.getItem("curso" + index);
+    let aprobados = document.querySelectorAll(".aprobado").length;
 
-    if(estado){
-        curso.classList.add(estado);
-    }
+    let total = cursos.length;
 
-
-    curso.onclick = function(){
-
-        this.classList.remove(
-            "aprobado",
-            "cursando",
-            "pendiente"
-        );
+    let porcentaje = Math.round((aprobados / total) * 100);
 
 
-        if(!this.dataset.estado){
-            this.dataset.estado="aprobado";
-        }
-        else if(this.dataset.estado==="aprobado"){
-            this.dataset.estado="cursando";
-        }
-        else if(this.dataset.estado==="cursando"){
-            this.dataset.estado="pendiente";
-        }
-        else{
-            this.dataset.estado="aprobado";
-        }
+    document.getElementById("avance").style.width = porcentaje + "%";
+
+    document.getElementById("porcentaje").innerHTML =
+    porcentaje + "% completado";
+
+}
 
 
-        this.classList.add(this.dataset.estado);
+
+cursos.forEach((curso,index)=>{
 
 
-        localStorage.setItem(
-            "curso"+index,
-            this.dataset.estado
-        );
+let guardado = localStorage.getItem("curso"+index);
 
-    }
+
+if(guardado){
+
+curso.classList.add(guardado);
+
+}
+
+
+
+curso.onclick=function(){
+
+
+this.classList.remove(
+"aprobado",
+"cursando",
+"pendiente"
+);
+
+
+
+let estado = this.dataset.estado;
+
+
+if(estado==="aprobado"){
+
+this.dataset.estado="cursando";
+
+}
+
+else if(estado==="cursando"){
+
+this.dataset.estado="pendiente";
+
+}
+
+else{
+
+this.dataset.estado="aprobado";
+
+}
+
+
+
+this.classList.add(this.dataset.estado);
+
+
+localStorage.setItem(
+"curso"+index,
+this.dataset.estado
+);
+
+
+
+actualizarProgreso();
+
+
+}
+
+
 
 });
+
+
+
+actualizarProgreso();
