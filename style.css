@@ -80,3 +80,45 @@ h1{
     background:#EFD7CF;
 
 }
+
+
+.progreso{
+
+    background:#FFFAF2;
+    width:80%;
+    margin:20px auto;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 5px 15px #DCD4C1;
+
+}
+
+
+.barra{
+
+    width:100%;
+    height:25px;
+    background:#DCD4C1;
+    border-radius:20px;
+    overflow:hidden;
+
+}
+
+
+#avance{
+
+    height:100%;
+    width:0%;
+    background:#818263;
+    transition:0.5s;
+
+}
+
+
+#porcentaje{
+
+    font-size:20px;
+    color:#818263;
+    font-weight:bold;
+
+}
