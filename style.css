@@ -1,67 +1,82 @@
 body{
-font-family:Arial;
-background:#f7efe8;
-text-align:center;
+    font-family: Arial, sans-serif;
+    background:#F6EAD4;
+    text-align:center;
 }
 
 
 h1{
-color:#5d4037;
+    color:#818263;
 }
 
 
 .malla{
-display:flex;
-gap:20px;
-overflow-x:auto;
-padding:30px;
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    padding:30px;
 }
 
 
 .ciclo{
 
-background:white;
-min-width:250px;
-padding:15px;
-border-radius:15px;
-box-shadow:0 5px 15px #ccc;
+    background:#FFFAF2;
+    min-width:250px;
+    padding:15px;
+    border-radius:20px;
+    box-shadow:0 5px 15px #DCD4C1;
 
 }
 
 
 .ciclo h2{
-color:#795548;
+
+    background:#818263;
+    color:white;
+    padding:10px;
+    border-radius:15px;
+
 }
 
 
 .curso{
 
-background:#ddd;
-margin:10px;
-padding:12px;
-border-radius:10px;
-cursor:pointer;
-font-size:14px;
+    background:#EFD7CF;
+    margin:10px;
+    padding:12px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
 
 }
 
 
 .curso:hover{
-transform:scale(1.05);
+
+    transform:scale(1.05);
+
 }
 
 
+/* Cursos aprobados */
 .aprobado{
-background:#81c784;
-color:white;
+
+    background:#C2C395;
+
 }
 
 
+/* Cursos en curso */
 .cursando{
-background:#ffcc80;
+
+    background:#DDBAAE;
+
 }
 
 
-.seleccionado{
-border:3px solid #5d4037;
+/* Cursos pendientes */
+.pendiente{
+
+    background:#EFD7CF;
+
 }
